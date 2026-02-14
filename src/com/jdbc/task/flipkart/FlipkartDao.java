@@ -31,19 +31,13 @@ public class FlipkartDao {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/flipkart_db",
-                "root",
-                "root");
+                "jdbc:mysql://localhost:3306/flipkart_db","root","root");
 
         Statement s = con.createStatement();
         ResultSet rs = s.executeQuery("SELECT * FROM product");
 
         while (rs.next()) {
-            System.out.println(
-                    rs.getInt(1) + " | "
-                    + rs.getString(2) + " | "
-                    + rs.getDouble(3) + " | "
-                    + rs.getInt(4));
+            System.out.println(rs.getInt(1) +" "+ rs.getString(2) + " "+ rs.getDouble(3) +" "+ rs.getInt(4));
         }
 
         con.close();

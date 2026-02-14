@@ -9,73 +9,67 @@ public class FlipkartDao {
 
 	public void insertProduct() throws Exception {
 
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/flipkart_db","root","root");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipkart_db", "root", "root");
 
-        Statement s = con.createStatement();
+		Statement s = con.createStatement();
 
-        int c = s.executeUpdate(
-                "INSERT INTO product(product_name, product_price, product_stock) VALUES ('Iphone 15', 80000, 10),('Laptop HP', 55000, 5),('Headphones', 2000, 20)");
+		int c = s.executeUpdate(
+				"INSERT INTO product(product_name, product_price, product_stock) VALUES ('Iphone 15', 80000, 10),('Laptop HP', 55000, 5),('Headphones', 2000, 20)");
 
-        if (c > 0) {
-            System.out.println("Products Inserted");
-        } else {
-            System.out.println("Insert Failed");
-        }
+		if (c > 0) {
+			System.out.println("Products Inserted");
+		} else {
+			System.out.println("Insert Failed");
+		}
 
-        con.close();
-    }
+		con.close();
+	}
 
-    public void fetchAllProducts() throws Exception {
+	public void fetchAllProducts() throws Exception {
 
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/flipkart_db","root","root");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipkart_db", "root", "root");
 
-        Statement s = con.createStatement();
-        ResultSet rs = s.executeQuery("SELECT * FROM product");
+		Statement s = con.createStatement();
+		ResultSet rs = s.executeQuery("SELECT * FROM product");
 
-        while (rs.next()) {
-            System.out.println(rs.getInt(1) +" "+ rs.getString(2) + " "+ rs.getDouble(3) +" "+ rs.getInt(4));
-        }
+		while (rs.next()) {
+			System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getDouble(3) + " " + rs.getInt(4));
+		}
 
-        con.close();
-    }
+		con.close();
+	}
 
-    public void updateProduct() throws Exception {
+	public void updateProduct() throws Exception {
 
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/flipkart_bd","root","root");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipkart_bd", "root", "root");
 
-        Statement s = con.createStatement();
+		Statement s = con.createStatement();
 
-        int c = s.executeUpdate(
-                "UPDATE product SET product_price = 75000 WHERE product_id = 1");
+		int c = s.executeUpdate("UPDATE product SET product_price = 75000 WHERE product_id = 1");
 
-        if (c > 0) {
-            System.out.println("Product Updated");
-        }
+		if (c > 0) {
+			System.out.println("Product Updated");
+		}
 
-        con.close();
-    }
+		con.close();
+	}
 
-    public void deleteProduct() throws Exception {
+	public void deleteProduct() throws Exception {
 
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/flipkart_db","root","root");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipkart_db", "root", "root");
 
-        Statement s = con.createStatement();
+		Statement s = con.createStatement();
 
-        int c = s.executeUpdate(
-                "DELETE FROM product WHERE product_id = 3");
+		int c = s.executeUpdate("DELETE FROM product WHERE product_id = 3");
 
-        if (c > 0) {
-            System.out.println("Product Deleted");
-        }
+		if (c > 0) {
+			System.out.println("Product Deleted");
+		}
 
-        con.close();
-    }
+		con.close();
+	}
 }

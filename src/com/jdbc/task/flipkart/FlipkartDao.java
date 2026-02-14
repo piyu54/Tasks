@@ -65,9 +65,7 @@ public class FlipkartDao {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/flipkart_db",
-                "root",
-                "root");
+                "jdbc:mysql://localhost:3306/flipkart_db","root","root");
 
         Statement s = con.createStatement();
 

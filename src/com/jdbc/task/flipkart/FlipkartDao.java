@@ -48,7 +48,7 @@ public class FlipkartDao {
 
 		Statement s = con.createStatement();
 
-		int c = s.executeUpdate("update product SET product_price = 75000 WHERE product_id = 1");
+		int c = s.executeUpdate("update product set product_price = 75000 WHERE product_id = 1");
 
 		if (c > 0) {
 			System.out.println("Product Updated");

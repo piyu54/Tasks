@@ -64,7 +64,7 @@ public class FlipkartDao {
 
 		Statement s = con.createStatement();
 
-		int c = s.executeUpdate("DELETE FROM product WHERE product_id = 3");
+		int c = s.executeUpdate("delete FROM product WHERE product_id = 3");
 
 		if (c > 0) {
 			System.out.println("Product Deleted");

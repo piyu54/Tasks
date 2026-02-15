@@ -32,7 +32,7 @@ public class FlipkartDao {
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipkart_db", "root", "root");
 
 		Statement s = con.createStatement();
-		ResultSet rs = s.executeQuery("select * FROM product");
+		ResultSet rs = s.executeQuery("select * from product");
 
 		while (rs.next()) {
 			System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getDouble(3) + " " + rs.getInt(4));

@@ -15,7 +15,7 @@ public class FlipkartDao {
 		Statement s = con.createStatement();
 
 		int c = s.executeUpdate(
-				"INSERT INTO product(product_name, product_price, product_stock) VALUES ('Iphone 15', 80000, 10),('Laptop HP', 55000, 5),('Headphones', 2000, 20)");
+				"insert INTO product(product_name, product_price, product_stock) VALUES ('Iphone 15', 80000, 10),('Laptop HP', 55000, 5),('Headphones', 2000, 20)");
 
 		if (c > 0) {
 			System.out.println("Products Inserted");
